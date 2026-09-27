@@ -9,16 +9,18 @@ export default function ResidentialSecurityPage() {
           backgroundImage: "url('/residential-security.jpg')",
         }}
       />
+
       <div className="absolute inset-0 bg-black/62" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/48 to-black/68" />
 
       <div className="relative z-10 mx-auto max-w-5xl">
+        {/* BACK TO HOME */}
         <div className="mb-12">
           <Link
-            href="/protection-plan"
-            className="text-sm uppercase tracking-[0.2em] text-white/60 transition hover:text-white"
+            href="/"
+            className="text-sm uppercase tracking-[0.2em] text-white/60 transition hover:text-[#8AAE45]"
           >
-            ← Back
+            ← Back to Home
           </Link>
         </div>
 
@@ -49,6 +51,7 @@ export default function ResidentialSecurityPage() {
               <p>Evidence gathering and coverage planning</p>
               <p>Safety, shelter, and evacuation planning</p>
               <p>Exterior visibility and access-point review</p>
+
               <p>
                 If airspace regulations permit drone usage, drone footage may be
                 acquired to provide a clearer and more complete planning view of
@@ -92,6 +95,7 @@ export default function ResidentialSecurityPage() {
               value="Residential Security Plan"
             />
 
+            {/* FULL NAME */}
             <div className="md:col-span-2">
               <label
                 htmlFor="fullName"
@@ -99,6 +103,7 @@ export default function ResidentialSecurityPage() {
               >
                 Full Name
               </label>
+
               <input
                 id="fullName"
                 name="fullName"
@@ -109,6 +114,7 @@ export default function ResidentialSecurityPage() {
               />
             </div>
 
+            {/* PREFERRED COMMUNICATION */}
             <div>
               <label
                 htmlFor="preferredMethod"
@@ -116,6 +122,7 @@ export default function ResidentialSecurityPage() {
               >
                 Preferred Method of Communication
               </label>
+
               <select
                 id="preferredMethod"
                 name="preferredMethod"
@@ -126,12 +133,14 @@ export default function ResidentialSecurityPage() {
                 <option value="" disabled>
                   Select one
                 </option>
+
                 <option value="phone">Phone Call</option>
                 <option value="text">Text Message</option>
                 <option value="email">Email</option>
               </select>
             </div>
 
+            {/* ZIP */}
             <div>
               <label
                 htmlFor="zipCode"
@@ -139,17 +148,19 @@ export default function ResidentialSecurityPage() {
               >
                 ZIP Code
               </label>
+
               <input
                 id="zipCode"
                 name="zipCode"
                 type="text"
                 inputMode="numeric"
                 required
-                placeholder="e.g. 37221"
+                placeholder="e.g. 49503"
                 className="w-full rounded-xl border border-white/10 bg-black/35 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
               />
             </div>
 
+            {/* PHONE */}
             <div>
               <label
                 htmlFor="phoneNumber"
@@ -157,6 +168,7 @@ export default function ResidentialSecurityPage() {
               >
                 Phone Number
               </label>
+
               <input
                 id="phoneNumber"
                 name="phoneNumber"
@@ -166,6 +178,7 @@ export default function ResidentialSecurityPage() {
               />
             </div>
 
+            {/* EMAIL */}
             <div>
               <label
                 htmlFor="emailAddress"
@@ -173,6 +186,7 @@ export default function ResidentialSecurityPage() {
               >
                 Email Address
               </label>
+
               <input
                 id="emailAddress"
                 name="emailAddress"
@@ -182,6 +196,7 @@ export default function ResidentialSecurityPage() {
               />
             </div>
 
+            {/* NOTICE */}
             <div className="md:col-span-2">
               <p className="rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm leading-6 text-white/80">
                 Notice: We will attempt contact one time only to avoid any
@@ -189,6 +204,7 @@ export default function ResidentialSecurityPage() {
               </p>
             </div>
 
+            {/* SUBMIT */}
             <div className="md:col-span-2">
               <button
                 type="submit"

@@ -1,86 +1,173 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+
+const cplClassDates = [
+  {
+    label: "10/24",
+    value: "Saturday, October 24, 2026",
+  },
+  {
+    label: "11/07",
+    value: "Saturday, November 7, 2026",
+  },
+  {
+    label: "11/21",
+    value: "Saturday, November 21, 2026",
+  },
+  {
+    label: "12/05",
+    value: "Saturday, December 5, 2026",
+  },
+  {
+    label: "12/19",
+    value: "Saturday, December 19, 2026",
+  },
+  {
+    label: "01/02",
+    value: "Saturday, January 2, 2027",
+  },
+  {
+    label: "01/16",
+    value: "Saturday, January 16, 2027",
+  },
+  {
+    label: "01/30",
+    value: "Saturday, January 30, 2027",
+  },
+  {
+    label: "02/13",
+    value: "Saturday, February 13, 2027",
+  },
+  {
+    label: "02/27",
+    value: "Saturday, February 27, 2027",
+  },
+  {
+    label: "03/13",
+    value: "Saturday, March 13, 2027",
+  },
+  {
+    label: "03/27",
+    value: "Saturday, March 27, 2027",
+  },
+];
 
 export default function FirearmsTrainingPage() {
+  const [trainingInterest, setTrainingInterest] = useState("");
+
+  const isCplCourse = trainingInterest === "Michigan CPL Course";
+
   return (
-    <main className="relative min-h-screen overflow-hidden bg-neutral-950 px-6 py-20 text-white">
+    <main className="relative min-h-screen overflow-hidden bg-neutral-950 px-5 py-14 text-white sm:px-6 md:py-20">
+      {/* BACKGROUND */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/firearms-training.jpg')",
         }}
       />
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/38 via-black/24 to-black/46" />
+
+      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/60" />
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-12">
+        {/* BACK TO HOME */}
+        <div className="mb-10">
           <Link
-            href="/protection-plan"
-            className="text-sm uppercase tracking-[0.2em] text-white/60 transition hover:text-white"
+            href="/"
+            className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70 transition hover:text-[#8AAE45]"
           >
-            ← Back
+            ← Back to Home
           </Link>
         </div>
 
+        {/* INTRO */}
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#8AAE45] md:text-sm">
           Firearms Training
         </p>
 
-        <h1 className="text-4xl font-semibold tracking-[0.06em] text-white md:text-6xl">
-          Master confidence, proficiency, and discipline for when it really
-          matters
+        <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-[0.04em] text-white md:text-6xl">
+          Build Confidence, Proficiency, And Discipline
         </h1>
 
         <p className="mt-6 max-w-3xl text-base leading-7 text-white/90 md:text-lg">
-          Courses are developed carefully to prioritize students safety,
-          responsibility, and comfortability.
+          Professional firearms instruction focused on safety, responsible
+          ownership, practical proficiency, and confident decision-making.
         </p>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-black/22 p-6 backdrop-blur-md">
+        {/* TRAINING OPTIONS */}
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-black/30 p-6 backdrop-blur-md">
             <h2 className="text-2xl font-medium text-white">
-              Training options may include
+              Training Options
             </h2>
 
             <div className="mt-5 space-y-3 text-white/90">
-              <p>USCCA Concealed Pistol License Course</p>
-              <p>Home defense fundamentals</p>
-              <p>Preparedness and mindset development</p>
-              <p>Foundational guidance for responsible ownership</p>
+              <p>Michigan CPL Course</p>
+              <p>Private Firearms Instruction</p>
+              <p>Marksmanship Training</p>
+              <p>Home Defense Fundamentals</p>
+              <p>General Firearms Guidance</p>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-black/22 p-6 backdrop-blur-md">
+          <div className="rounded-2xl border border-white/10 bg-black/30 p-6 backdrop-blur-md">
             <h2 className="text-2xl font-medium text-white">
-              Why train with us?
+              Why Train With PCG?
             </h2>
 
             <div className="mt-5 space-y-3 text-white/90">
-              <p>Veteran-owned company</p>
+              <p>Veteran-owned and operated</p>
+
               <p>
-                Instructors are required to have military or law enforcement
-                experience
+                Instruction focused on safety, responsibility, confidence, and
+                practical skill development
               </p>
+
               <p>
-                Experience drawn from some of the most exclusive executive
-                protection firms in the country
+                Training options for new shooters as well as individuals
+                looking to improve existing skills
               </p>
+
               <p>
-                Instruction built around confidence, responsibility, and sound
-                decision-making
+                Private instruction available for students who prefer
+                individualized training
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 rounded-2xl border border-white/10 bg-black/22 p-6 backdrop-blur-md">
-          <h2 className="text-2xl font-medium text-white">
-            Enter your contact information below for more information
+        {/* CPL SCHEDULE */}
+        <div className="mt-6 rounded-2xl border border-[#8AAE45]/40 bg-black/35 p-6 backdrop-blur-md">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#8AAE45]">
+            Michigan CPL Courses
+          </p>
+
+          <h2 className="mt-3 text-2xl font-medium text-white">
+            Scheduled Every Other Saturday
           </h2>
 
-          <p className="mt-4 max-w-3xl text-white/90">
-            Share a few details and we will follow up with one outreach attempt
-            only, so you do not receive repeated calls or messages.
+          <p className="mt-3 max-w-3xl leading-7 text-white/80">
+            Michigan CPL courses begin October 24, 2026. Select an available
+            class date when submitting your training inquiry.
+          </p>
+        </div>
+
+        {/* CONTACT FORM */}
+        <div className="mt-10 rounded-2xl border border-white/10 bg-black/35 p-5 backdrop-blur-md sm:p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#8AAE45]">
+            Training Inquiry
+          </p>
+
+          <h2 className="mt-3 text-2xl font-medium text-white md:text-3xl">
+            Tell Us What Training You&apos;re Interested In
+          </h2>
+
+          <p className="mt-4 max-w-3xl leading-7 text-white/80">
+            Submit your information and PCG will follow up to confirm
+            availability and next steps.
           </p>
 
           <form
@@ -94,6 +181,7 @@ export default function FirearmsTrainingPage() {
               value="Firearms Training"
             />
 
+            {/* FULL NAME */}
             <div className="md:col-span-2">
               <label
                 htmlFor="fullName"
@@ -101,16 +189,106 @@ export default function FirearmsTrainingPage() {
               >
                 Full Name
               </label>
+
               <input
                 id="fullName"
                 name="fullName"
                 type="text"
                 required
                 placeholder="Enter your name"
-                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
+                className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
               />
             </div>
 
+            {/* TRAINING TYPE */}
+            <div className="md:col-span-2">
+              <label
+                htmlFor="trainingInterest"
+                className="mb-2 block text-sm font-medium text-white/90"
+              >
+                What Are You Interested In?
+              </label>
+
+              <select
+                id="trainingInterest"
+                name="trainingInterest"
+                required
+                value={trainingInterest}
+                onChange={(event) =>
+                  setTrainingInterest(event.target.value)
+                }
+                className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-[#8AAE45]"
+              >
+                <option value="" disabled>
+                  Select a training option
+                </option>
+
+                <option value="Michigan CPL Course">
+                  Michigan CPL Course
+                </option>
+
+                <option value="Private Firearms Lesson">
+                  Private Firearms Lesson
+                </option>
+
+                <option value="Marksmanship Training">
+                  Marksmanship Training
+                </option>
+
+                <option value="General Firearms Inquiry">
+                  General Firearms Inquiry
+                </option>
+              </select>
+            </div>
+
+            {/* CPL DATE DROPDOWN */}
+            {isCplCourse && (
+              <div className="md:col-span-2">
+                <label
+                  htmlFor="classDate"
+                  className="mb-2 block text-sm font-medium text-white/90"
+                >
+                  Select Your CPL Course Date
+                </label>
+
+                <select
+                  id="classDate"
+                  name="classDate"
+                  required
+                  defaultValue=""
+                  className="w-full rounded-xl border border-[#8AAE45]/50 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-[#8AAE45]"
+                >
+                  <option value="" disabled>
+                    Select an available date
+                  </option>
+
+                  {cplClassDates.map((date) => (
+                    <option key={date.value} value={date.value}>
+                      {date.label}
+                    </option>
+                  ))}
+                </select>
+
+                <p className="mt-2 text-sm leading-6 text-white/60">
+                  Your class date will be confirmed after your registration
+                  request is received.
+                </p>
+              </div>
+            )}
+
+            {/* OTHER TRAINING */}
+            {trainingInterest && !isCplCourse && (
+              <div className="md:col-span-2">
+                <div className="rounded-xl border border-white/10 bg-black/30 px-4 py-4">
+                  <p className="text-sm leading-6 text-white/75">
+                    No date selection is required. PCG will contact you
+                    directly to discuss your training needs and scheduling.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* COMMUNICATION */}
             <div>
               <label
                 htmlFor="preferredMethod"
@@ -118,22 +296,25 @@ export default function FirearmsTrainingPage() {
               >
                 Preferred Method of Communication
               </label>
+
               <select
                 id="preferredMethod"
                 name="preferredMethod"
                 required
                 defaultValue=""
-                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none transition focus:border-[#8AAE45]"
+                className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none transition focus:border-[#8AAE45]"
               >
                 <option value="" disabled>
                   Select one
                 </option>
+
                 <option value="phone">Phone Call</option>
                 <option value="text">Text Message</option>
                 <option value="email">Email</option>
               </select>
             </div>
 
+            {/* ZIP */}
             <div>
               <label
                 htmlFor="zipCode"
@@ -141,17 +322,19 @@ export default function FirearmsTrainingPage() {
               >
                 ZIP Code
               </label>
+
               <input
                 id="zipCode"
                 name="zipCode"
                 type="text"
                 inputMode="numeric"
                 required
-                placeholder="e.g. 37221"
-                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
+                placeholder="e.g. 49503"
+                className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
               />
             </div>
 
+            {/* PHONE */}
             <div>
               <label
                 htmlFor="phoneNumber"
@@ -159,15 +342,17 @@ export default function FirearmsTrainingPage() {
               >
                 Phone Number
               </label>
+
               <input
                 id="phoneNumber"
                 name="phoneNumber"
                 type="tel"
                 placeholder="Enter your phone number"
-                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
+                className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
               />
             </div>
 
+            {/* EMAIL */}
             <div>
               <label
                 htmlFor="emailAddress"
@@ -175,28 +360,41 @@ export default function FirearmsTrainingPage() {
               >
                 Email Address
               </label>
+
               <input
                 id="emailAddress"
                 name="emailAddress"
                 type="email"
                 placeholder="Enter your email"
-                className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
+                className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
               />
             </div>
 
+            {/* MESSAGE */}
             <div className="md:col-span-2">
-              <p className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm leading-6 text-white/80">
-                Notice: We will attempt contact one time only to avoid any
-                unnecessary annoyance or repeated outreach.
-              </p>
+              <label
+                htmlFor="message"
+                className="mb-2 block text-sm font-medium text-white/90"
+              >
+                Additional Information
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                placeholder="Experience level, questions, training goals, or anything else you would like us to know."
+                className="w-full resize-none rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-[#8AAE45]"
+              />
             </div>
 
+            {/* SUBMIT */}
             <div className="md:col-span-2">
               <button
                 type="submit"
-                className="rounded-full border border-white/15 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-black transition hover:scale-[1.02]"
+                className="w-full rounded-full bg-[#8AAE45] px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-black transition hover:bg-[#a3c85a] sm:w-auto"
               >
-                Request More Information
+                Request Training Information
               </button>
             </div>
           </form>
